@@ -47,7 +47,7 @@ def send_to_admin(data):
 # --- MAIN (Simulation d'un bot malveillant) ---
 async def main():
     client = TelegramClient('session_name', API_ID, API_HASH)
-    await client.start()
+    await client.start(bot_token=os.getenv("TELEGRAM_BOT_TOKEN"))
 
     @client.on(events.NewMessage(pattern="/start"))
     async def handle_start(event):
