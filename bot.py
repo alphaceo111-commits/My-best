@@ -1,3 +1,4 @@
+import os
 import asyncio
 from telethon import TelegramClient, events, Button
 from telethon.tl.functions.messages import RequestUrlAuthRequest
